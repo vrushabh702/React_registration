@@ -1,10 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Login from './components/login';
+import Registration from './components/Registration';
 
 function App() {
   return (
-    <div className="App">
-
+    <div >
+      <Routes>
+        <Route path="/" element={<Registration/>}/>
+        <Route path="/registration" element={<Registration/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
     </div>
   );
 }

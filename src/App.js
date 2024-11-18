@@ -1,8 +1,10 @@
 import React from 'react';
 import Login from './components/login';
+import { Route,Routes } from 'react-router-dom';
 import Registration from './components/Registration';
 
-function App() {
+// function App() {
+const App = () => {
   return (
     <div >
       <Routes>

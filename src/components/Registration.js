@@ -2,16 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
-const {register,handlesubmit,watch,formState:{errors},reset} = useForm()
-const onSubmit = data => {
-    console.log(data)
-}
-
 const Registration = () =>{
+    // const {register,handlesubmit,watch,formState:{errors},reset} = useForm()
+    const {register,handlesubmit,formState:{errors}} = useForm()
+    const onSubmit = data => {
+        console.log(data)
+    }
+
     return (
         <div className='flex justify-center lg:h-screen items-center'>
             <div className='card w-full md:w-96 items-center shadow-2xl bg-base-100'>
-                <form className='card-body w-full lg:w-96'>
+                <form onSubmit={handlesubmit(onSubmit)} className='card-body w-full lg:w-96'>
                     <div className='form-control'>
                         <label className='label'>
                             <span className='label-text'>Name</span>

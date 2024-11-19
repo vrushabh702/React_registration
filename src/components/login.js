@@ -1,13 +1,31 @@
 import React from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import auth from './firebase.init';
 
 const Login = ()  => {
     const {register,handleSubmit,formState: {errors}} = useForm();
+    const [
+        signInWithEmailAndPassword,
+        user,
+        // loading,
+        error
+    ] = useSignInWithEmailAndPassword(auth);
 
     const onSubmit = data =>{
         console.log(data)
-    }
+        signInWithEmailAndPassword(data.email, data.password)
+        console.log(data)
+    };
+
+    if(user){
+        console.log(user)
+    };
+    if(error){
+        console.log(error)
+    };
+
     return (
         <div className='flex justify-center lg:min-h-screen items-center'> 
             <div className='card w-full md:w-96 items-center shadow-2x1 bg-base-100'>

@@ -1,8 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-    const {handleSubmit,register,formState : {errors}} = useForm;
+
 const Login = ()  => {
+    const {register,handleSubmit,formState: {errors}} = useForm();
+
+    const onSubmit = data =>{
+        console.log(data)
+    }
     return (
         <div className='flex justify-center lg:min-h-screen items-center'> 
             <div className='card w-full md:w-96 items-center shadow-2x1 bg-base-100'>
